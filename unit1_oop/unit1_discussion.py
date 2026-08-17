@@ -57,11 +57,20 @@ class RangedWeapon(Weapon):
         self.ammo = ammo_type
         self.mag_size = mag_size
         self.fire_rate = fire_rate
+        self.attachments = []
 
     def display_stats(self):
 
-        return (super().display_stats(),
+        return (super().display_stats() + ", "
                 f"Weapon: {self.name}, Ammo type: {self.ammo}, Mag capacity: {self.mag_size}, Fire Rate {self.fire_rate}")
+
+    def weapon_attachments(self, attachment_name: str):
+        self.attachments.append(attachment_name)
+
+    def display_attachments(self):
+        return f" {self.name} Attachments: {self.attachments}"
+
+
 
 
 # TODO 3:
@@ -111,10 +120,12 @@ def demonstrate_copying():
 
     laser = RangedWeapon("Laser", 900, 500, "Epic", "Battery", 32, 15)
 
-    copy_laser = copy(laser) # Creates a copy with references to the original, changes to this copy affect the original, a shallow copy
-    deep_laser = deepcopy(laser) # Creates an independent copy of the original so that, unlike shallow copy, can be changed w/o affecting the original
+    copy_laser = copy(laser) # Creates a copy with references to the original, changes to this copy effect the original, a shallow copy
+    deep_laser = deepcopy(laser) # Creates an independent copy of the original so that, unlike shallow copy, can be changed w/o effecting the original
 
     laser.damage = 550
+    copy_laser.weapon_attachments("Heat sink")
+    deep_laser.weapon_attachments("Scope")
     print(f"Original object: {laser.__dict__} \n Shallow copy: {copy_laser.__dict__} \n Deep copy: {deep_laser.__dict__} ")
 
 
@@ -139,7 +150,9 @@ def main():
 
     print("\nTODO: Create and test your child object")
     boom_rweapon = RangedWeapon("RPG", 700, 100, "rare", "Rocket", 5, 2.5)
+    boom_rweapon.weapon_attachments("Guided lazer")
     print(boom_rweapon.display_stats())
+    print(boom_rweapon.display_attachments())
 
 
     demonstrate_namespaces()
