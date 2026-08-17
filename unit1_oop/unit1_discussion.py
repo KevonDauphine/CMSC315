@@ -59,15 +59,15 @@ class RangedWeapon(Weapon):
         self.fire_rate = fire_rate
         self.attachments = []
 
-    def display_stats(self):
+    def display_stats(self): #override display stats in Weapon
 
         return (super().display_stats() + ", "
                 f"Ammo type: {self.ammo}, Mag capacity: {self.mag_size}, Fire Rate {self.fire_rate}")
 
-    def weapon_attachments(self, attachment_name: str):
+    def weapon_attachments(self, attachment_name: str): #weapons can have attachments
         self.attachments.append(attachment_name)
 
-    def display_attachments(self):
+    def display_attachments(self): #display those attachments
         return f" {self.name} Attachments: {self.attachments}"
 
 
@@ -95,7 +95,7 @@ def demonstrate_namespaces():
     print("Ranged weapon type through class ", RangedWeapon.weapon_type)
     print("Ranged weapon type through object ", weapon2.weapon_type)
 
-    weapon3.aoe_radius = 25
+    weapon3.aoe_radius = 25 # adding new attribute to weapon 3
 
     print("weapon2 namespace: ", weapon2.__dict__)
     print("weapon3 namespace: ", weapon3.__dict__)
@@ -123,9 +123,11 @@ def demonstrate_copying():
     copy_laser = copy(laser) # Creates a copy with references to the original, changes to this copy effect the original, a shallow copy
     deep_laser = deepcopy(laser) # Creates an independent copy of the original so that, unlike shallow copy, can be changed w/o effecting the original
 
-    laser.damage = 550
+    laser.damage = 550 # modifying original value
+
     copy_laser.weapon_attachments("Heat sink")
     deep_laser.weapon_attachments("Scope")
+
     print(f"Original object: {laser.__dict__} \n Shallow copy: {copy_laser.__dict__} \n Deep copy: {deep_laser.__dict__} ")
 
 
@@ -151,6 +153,7 @@ def main():
     print("\nTODO: Create and test your child object")
     boom_rweapon = RangedWeapon("RPG", 700, 100, "rare", "Rocket", 5, 2.5)
     boom_rweapon.weapon_attachments("Guided lazer")
+
     print(boom_rweapon.display_stats())
     print(boom_rweapon.display_attachments())
 
