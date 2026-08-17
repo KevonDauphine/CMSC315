@@ -33,3 +33,17 @@ Your reflection should be approximately 150–200 words and address the followin
 2. What challenges did you encounter, and how did you overcome them?
 3. Compare OOP to procedural programming.
 4. Discuss the benefits of maintainability and reusability and apply this managing overhead, practical application development, and future use.
+
+# My Refection
+
+During my time spent coding, I learned how to better apply OOP and when to use copy and deep copy. 
+While doing the assignment, some hurdles I faced were actually figuring out how I should actually express what I learned.
+What lead me to this design was thinking about some games I have been playing and inspired me to make the Weapon and RangedWeapon classes.
+On the coding itself, small syntax errors that I diagnosed with the console were some hurdles I faced.
+
+Since I made it to be OOP, I can make one parent class, such as Weapon and if I want to add a new weapon class,
+like one for ranged weapons, all I need to do is inherit from Weapon and add new functionality without the need to rewrite code.
+With Procedural programming, I would have to manually give each function the data it needs.
+With OOP with less to write, maintaining and reusing is easier to do lessening the overhead. Practical application of
+this is seen in games, especially when games have plenty of things like weapons or items. If I wanted to expand on this,
+I could easily make something for throwing, such as ThrownWeapon
