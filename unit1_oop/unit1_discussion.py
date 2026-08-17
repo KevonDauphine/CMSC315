@@ -62,7 +62,7 @@ class RangedWeapon(Weapon):
     def display_stats(self):
 
         return (super().display_stats() + ", "
-                f"Weapon: {self.name}, Ammo type: {self.ammo}, Mag capacity: {self.mag_size}, Fire Rate {self.fire_rate}")
+                f"Ammo type: {self.ammo}, Mag capacity: {self.mag_size}, Fire Rate {self.fire_rate}")
 
     def weapon_attachments(self, attachment_name: str):
         self.attachments.append(attachment_name)
