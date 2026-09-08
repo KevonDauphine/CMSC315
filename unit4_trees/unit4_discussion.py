@@ -219,11 +219,5 @@ def main():
     print("Both return safely (False / empty list) because the base case")
     print("in each recursive helper checks for node is None before doing anything else")
 
-    print("|||| Real World ||||")
-
-    rweapon_bst = BST()
-    
-
-
 if __name__ == "__main__":
     main()
