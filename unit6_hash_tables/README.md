@@ -36,6 +36,6 @@ While doing this assignment, I learned how Python dictionaries work as hash tabl
 I built a loot table for a game using weapon names as keys and stats like damage and rarity as values, 
 which made insert, lookup, update, and delete all feel natural since dictionaries are built for exactly that.
 Hash tables work by running each key through a hash function that points directly to where its value is stored, 
-giving lookups near instant O(1) time instead of searching through everything. A collision happens when two different keys hash to the same location, 
+giving lookups O(1) time instead of searching through everything. A collision happens when two different keys hash to the same location, 
 and when that happens the table has to check multiple entries at that spot instead of landing directly on one, 
 slowing lookups down toward O(n) in the worst case.
