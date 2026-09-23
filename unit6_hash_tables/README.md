@@ -30,3 +30,12 @@ Your reflection should be approximately 150–200 words and address the followin
 1. What concepts or skills did you learn while completing this assignment?
 2. What challenges did you encounter, and how did you overcome them?
 3. Explain how hash tables behave, what collisions are, and how hash tables can improve efficiency.
+
+## My reflection
+While doing this assignment, I learned how Python dictionaries work as hash tables under the hood, not just as a way to store data. 
+I built a loot table for a game using weapon names as keys and stats like damage and rarity as values, 
+which made insert, lookup, update, and delete all feel natural since dictionaries are built for exactly that.
+Hash tables work by running each key through a hash function that points directly to where its value is stored, 
+giving lookups near instant O(1) time instead of searching through everything. A collision happens when two different keys hash to the same location, 
+and when that happens the table has to check multiple entries at that spot instead of landing directly on one, 
+slowing lookups down toward O(n) in the worst case.
