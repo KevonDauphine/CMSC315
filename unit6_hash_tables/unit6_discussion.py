@@ -139,9 +139,5 @@ def main():
     removed = loot_table.pop("Rocket Launcher", "Key not found")
     print(f"Attempting to delete 'Rocket Launcher' (does not exist): {removed}")
 
-
-
-
-
 if __name__ == "__main__":
     main()
